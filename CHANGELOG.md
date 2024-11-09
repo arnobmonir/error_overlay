@@ -1,3 +1,11 @@
+##  [1.0.4]
+# Change Code Convention
+##  [1.0.3]
+# Add Example Reference
+##  [1.0.2]
+# Change Code Convention
+##  [1.0.1]
+# Change Readme Conventions
 ##  [1.0.0]
 # Initial Release
 - Created the Live Log Monitoring package for Flutter.
