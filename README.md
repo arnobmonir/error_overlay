@@ -15,7 +15,7 @@ To use the **Error Overlay** package in your Flutter project, follow these steps
 1.  Add the dependency to your *pubspec.yaml* file:
 ```yaml
 dependencies:
-  error_overlay: ^1.0.0
+  error_overlay: ^1.0.2
     
 ```
 2. Install the package by running:
