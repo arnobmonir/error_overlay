@@ -1,4 +1,4 @@
-##  [0.1.0]
+##  [1.0.0]
 # Initial Release
 - Created the Live Log Monitoring package for Flutter.
 - Introduced an overlay error log system that can be shown on all pages of a Flutter app.

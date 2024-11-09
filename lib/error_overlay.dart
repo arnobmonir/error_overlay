@@ -1,25 +1,25 @@
-library log_monitor;
+library;
 
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:log_monitor/src/provider/log_monitor_provider.dart';
 import 'package:provider/provider.dart';
+import 'src/provider/error_overlay_provider.dart';
 
-class LogMonitor extends StatefulWidget {
+class ErrorOverlay extends StatefulWidget {
   final Widget child;
   final bool isMonitor;
 
-  const LogMonitor({
+  const ErrorOverlay({
     super.key,
     required this.child,
     this.isMonitor = true,
   });
 
   @override
-  State<LogMonitor> createState() => _LogMonitorState();
+  State<ErrorOverlay> createState() => _ErrorOverlayState();
 }
 
-class _LogMonitorState extends State<LogMonitor> {
+class _ErrorOverlayState extends State<ErrorOverlay> {
   Offset _position = const Offset(20, 100);
   Size screenSize = const Size(320, 480);
   final StreamController<FlutterErrorDetails> _streamController =
@@ -29,8 +29,8 @@ class _LogMonitorState extends State<LogMonitor> {
   Widget build(BuildContext context) {
     screenSize = MediaQuery.of(context).size;
     return ChangeNotifierProvider(
-      create: (context) => LogMonitorProvider(),
-      child: Consumer<LogMonitorProvider>(
+      create: (context) => ErrorOverlayProvider(),
+      child: Consumer<ErrorOverlayProvider>(
         builder: (context, provider, providerchild) {
           FlutterError.onError = (FlutterErrorDetails details) {
             FlutterError.presentError(
@@ -42,7 +42,7 @@ class _LogMonitorState extends State<LogMonitor> {
           return Stack(
             children: [
               Positioned.fill(
-                child: widget.child ?? const Text('Something went wrong'),
+                child: widget.child,
               ),
               Positioned(
                 left: _position.dx,

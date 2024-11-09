@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class LogMonitorProvider with ChangeNotifier {
+class ErrorOverlayProvider with ChangeNotifier {
   LogMonitorMode mode = LogMonitorMode.visible;
   DateTime visibleDuration =
       DateTime.now().add(const Duration(seconds: 5)); // 5 seconds

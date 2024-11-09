@@ -1,6 +1,6 @@
 
-## Log Monitor
-The **Log Monitor** package for Flutter allows you to easily display real-time error logs as an overlay across all pages of your app. This is extremely useful for developers to monitor and debug issues while building and testing the app.
+## Error Overlay
+The **Error Overlay** package for Flutter allows you to easily display real-time error logs as an overlay across all pages of your app. This is extremely useful for developers to monitor and debug issues while building and testing the app.
 ## Features
 
 - Show error logs in a real-time overlay on all pages of the app.
@@ -11,11 +11,11 @@ The **Log Monitor** package for Flutter allows you to easily display real-time e
 
 ## Installation
 
-To use the **Log Monitor** package in your Flutter project, follow these steps:
+To use the **Error Overlay** package in your Flutter project, follow these steps:
 1.  Add the dependency to your *pubspec.yaml* file:
 ```yaml
 dependencies:
-    log_monitor: ^1.0.0
+  error_overlay: ^1.0.0
     
 ```
 2. Install the package by running:
@@ -24,11 +24,11 @@ flutter pub get
 ```
 
 ## Usage/Examples
-To use the Log Monitor, you simply need to wrap your MaterialApp widget with the LogMonitor widget. This will automatically display a real-time overlay of error logs.
+To use the Error Overlay, you simply need to wrap your MaterialApp widget with the ErrorOverlay widget. This will automatically display a real-time overlay of error logs.
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:log_monitor/log_monitor.dart';  // Import the package
+import 'package:error_overlay/error_overlay.dart';  // Import the package
 
 void main() {
   runApp(MyApp());
@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       // Wrap your app in the LogMonitor widget to enable live log overlay
-      home: LogMonitor(
+      home: ErrorOverlay(
         child: MyHomePage(),
       ),
     );
@@ -51,7 +51,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Live Log Monitoring Example'),
+        title: Text('Live Error Overlay Example'),
       ),
       body: Center(
         child: ElevatedButton(
