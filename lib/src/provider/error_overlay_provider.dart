@@ -2,10 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ErrorOverlayProvider with ChangeNotifier {
+  bool isEnabled = false;
   LogMonitorMode mode = LogMonitorMode.visible;
-  DateTime visibleDuration =
-      DateTime.now().add(const Duration(seconds: 5)); // 5 seconds
   List<FlutterErrorDetails> errors = [];
+  void toggleMonitor() {
+    isEnabled = !isEnabled;
+    notifyListeners();
+  }
+
   void addError(FlutterErrorDetails error) {
     if (errors.length >= 10) {
       errors.removeAt(0);
@@ -27,11 +31,6 @@ class ErrorOverlayProvider with ChangeNotifier {
       }
     }
 
-    notifyListeners();
-  }
-
-  void updateVisible(int duration) {
-    visibleDuration = DateTime.now().add(const Duration(seconds: 5));
     notifyListeners();
   }
 }

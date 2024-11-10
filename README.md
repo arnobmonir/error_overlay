@@ -15,7 +15,7 @@ To use the **Error Overlay** package in your Flutter project, follow these steps
 1.  Add the dependency to your *pubspec.yaml* file:
 ```yaml
 dependencies:
-  error_overlay: ^1.0.4
+  error_overlay: ^1.0.5
     
 ```
 2. Install the package by running:
@@ -28,43 +28,48 @@ To use the Error Overlay, you simply need to wrap your MaterialApp widget with t
 
 ```dart
 import 'package:flutter/material.dart';
-import 'package:error_overlay/error_overlay.dart';  // Import the package
+import 'package:error_overlay/error_overlay.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      // Wrap your app in the LogMonitor widget to enable live log overlay
-      home: ErrorOverlay(
-        child: MyHomePage(),
-      ),
+    return const MaterialApp(
+      home: ErrorOverlay(child: MyHomePage()),
     );
   }
 }
 
 class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Live Error Overlay Example'),
+        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
+        // Wrap your prefer widget with ShowErrorOverlay to enable monitoring
+        title: const ShowErrorOverlay(child: Text("Log Monitor")),
       ),
       body: Center(
-        child: ElevatedButton(
+        child: TextButton(
+          child: const Text("Throw Exception"),
           onPressed: () {
-            // Simulate an error
-            throw Exception('This is a test error!');
+            throw Exception("Test Exception");
           },
-          child: Text('Simulate Error'),
         ),
       ),
     );
   }
 }
+
+
 
 ```
 
