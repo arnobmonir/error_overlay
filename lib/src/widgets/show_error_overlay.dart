@@ -1,10 +1,17 @@
 part of '../../error_overlay.dart';
 
+///This is a special widget which will manage monitoring of errors
 class ShowErrorOverlay extends StatefulWidget {
+  ///the show error overlay button will be placed
   final Widget child;
+
+  ///number of times the user must tap the show error overlay button to enable monitoring
   final int taps;
+
+  ///maximum duration between user taps to enable monitoring
   final Duration maxDurationBetweenTaps;
 
+  ///This is a special widget which will manage monitoring of errors and will control the monitoring of the show error overlay
   const ShowErrorOverlay({
     super.key,
     required this.child,
@@ -32,7 +39,7 @@ class _ShowErrorOverlayState extends State<ShowErrorOverlay> {
     print("Taps:  $_userTaps");
     if (_userTaps == widget.taps) {
       try {
-        context.read<ErrorOverlayProvider>().toggleMonitor();
+        context.read<_ErrorOverlayProvider>().toggleMonitor();
       } catch (e) {
         print('Please wrap parent widget with ErrorOverlay');
       }

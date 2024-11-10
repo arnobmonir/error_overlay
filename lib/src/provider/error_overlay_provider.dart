@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
+part of '../../error_overlay.dart';
 
-class ErrorOverlayProvider with ChangeNotifier {
+class _ErrorOverlayProvider with ChangeNotifier {
   bool isEnabled = false;
-  LogMonitorMode mode = LogMonitorMode.visible;
+  _LogMonitorMode mode = _LogMonitorMode.visible;
   List<FlutterErrorDetails> errors = [];
   void toggleMonitor() {
     isEnabled = !isEnabled;
@@ -18,16 +17,16 @@ class ErrorOverlayProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  void changeVisibility({LogMonitorMode? modeStatus}) {
+  void changeVisibility({_LogMonitorMode? modeStatus}) {
     if (modeStatus != null) {
       mode = modeStatus;
     } else {
-      if (mode == LogMonitorMode.visible) {
-        mode = LogMonitorMode.dim;
-      } else if (mode == LogMonitorMode.dim) {
-        mode = LogMonitorMode.hide;
+      if (mode == _LogMonitorMode.visible) {
+        mode = _LogMonitorMode.dim;
+      } else if (mode == _LogMonitorMode.dim) {
+        mode = _LogMonitorMode.hide;
       } else {
-        mode = LogMonitorMode.visible;
+        mode = _LogMonitorMode.visible;
       }
     }
 
@@ -35,7 +34,7 @@ class ErrorOverlayProvider with ChangeNotifier {
   }
 }
 
-enum LogMonitorMode {
+enum _LogMonitorMode {
   visible,
   dim,
   hide,

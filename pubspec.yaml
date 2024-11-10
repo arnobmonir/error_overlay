@@ -1,6 +1,6 @@
 name: error_overlay
 description: "Error Overlay is a Flutter package that allows you to display real-time error logs as an overlay on all pages of your app."
-version: 1.0.5
+version: 1.0.6
 homepage: https://github.com/arnobmonir/error_overlay.git
 repository: https://github.com/arnobmonir/error_overlay.git
 
@@ -16,7 +16,7 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+#  flutter_lints: ^5.0.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

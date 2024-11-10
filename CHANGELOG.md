@@ -1,4 +1,6 @@
-##  [1.0.4]
+##  [1.0.6]
+Change public_member_api_docs and adding related documentation
+##  [1.0.5]
 Added enable/disable monitoring
 ##  [1.0.4]
 # Change Code Convention

@@ -3,12 +3,14 @@ library;
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'src/provider/error_overlay_provider.dart';
 part 'src/widgets/show_error_overlay.dart';
+part 'src/provider/error_overlay_provider.dart';
 
+///Error overlay widget is create a new error overlay in all the pages that can show the error
 class ErrorOverlay extends StatefulWidget {
+  /// error overlay will be displayed over the child
   final Widget child;
-
+  /// The Error Overlay  allows you to easily display real-time error logs as an overlay across all pages of your app. This is extremely useful for developers to monitor and debug issues while building and testing the app..
   const ErrorOverlay({
     super.key,
     required this.child,
@@ -28,9 +30,9 @@ class _ErrorOverlayState extends State<ErrorOverlay> {
   Widget build(BuildContext context) {
     screenSize = MediaQuery.of(context).size;
     return ChangeNotifierProvider(
-      create: (context) => ErrorOverlayProvider(),
-      child: Consumer<ErrorOverlayProvider>(
-        builder: (context, provider, providerchild) {
+      create: (context) => _ErrorOverlayProvider(),
+      child: Consumer<_ErrorOverlayProvider>(
+        builder: (context, provider, providerChild) {
           FlutterError.onError = (FlutterErrorDetails details) {
             FlutterError.presentError(
                 details); // This will print the error to the console
@@ -80,7 +82,7 @@ class _ErrorOverlayState extends State<ErrorOverlay> {
                               });
                             },
                             child: AnimatedOpacity(
-                              opacity: provider.mode == LogMonitorMode.visible
+                              opacity: provider.mode == _LogMonitorMode.visible
                                   ? 1.0
                                   : 0.5,
                               duration: const Duration(milliseconds: 100),
@@ -90,18 +92,18 @@ class _ErrorOverlayState extends State<ErrorOverlay> {
                                   shape: BoxShape.circle,
                                   color: Colors.blue,
                                 ),
-                                child: Icon(provider.mode == LogMonitorMode.hide
+                                child: Icon(provider.mode == _LogMonitorMode.hide
                                     ? Icons.vertical_align_bottom
-                                    : (provider.mode == LogMonitorMode.dim
+                                    : (provider.mode == _LogMonitorMode.dim
                                         ? Icons.close
                                         : Icons.dark_mode_outlined)),
                               ),
                             ),
                           ),
                           AnimatedOpacity(
-                            opacity: provider.mode == LogMonitorMode.visible
+                            opacity: provider.mode == _LogMonitorMode.visible
                                 ? 1.0
-                                : (provider.mode == LogMonitorMode.dim
+                                : (provider.mode == _LogMonitorMode.dim
                                     ? 0.3
                                     : 0.0),
                             duration: const Duration(milliseconds: 500),
@@ -110,7 +112,7 @@ class _ErrorOverlayState extends State<ErrorOverlay> {
                               builder: (context, snapshot) {
                                 return IgnorePointer(
                                   ignoring:
-                                      provider.mode == LogMonitorMode.visible
+                                      provider.mode == _LogMonitorMode.visible
                                           ? false
                                           : true,
                                   child: Visibility(
