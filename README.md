@@ -9,7 +9,7 @@ The **Error Overlay** package for Flutter allows you to easily display real-time
 - Easy to set up and use.
 
 [//]: # (![screen_capture.gif]&#40;screenshots%2Fscreen_capture.gif&#41;)
-![screen_capture.gif](https://raw.githubusercontent.com/arnobmonir/error_overlay/screenshots/screen_capture.gif)
+![screen_capture.gif](https://github.com/arnobmonir/error_overlay/screenshots/screen_capture.gif)
 
 ## Installation
 
