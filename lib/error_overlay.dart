@@ -10,6 +10,7 @@ part 'src/provider/error_overlay_provider.dart';
 class ErrorOverlay extends StatefulWidget {
   /// error overlay will be displayed over the child
   final Widget child;
+
   /// The Error Overlay  allows you to easily display real-time error logs as an overlay across all pages of your app. This is extremely useful for developers to monitor and debug issues while building and testing the app..
   const ErrorOverlay({
     super.key,
@@ -92,11 +93,12 @@ class _ErrorOverlayState extends State<ErrorOverlay> {
                                   shape: BoxShape.circle,
                                   color: Colors.blue,
                                 ),
-                                child: Icon(provider.mode == _LogMonitorMode.hide
-                                    ? Icons.vertical_align_bottom
-                                    : (provider.mode == _LogMonitorMode.dim
-                                        ? Icons.close
-                                        : Icons.dark_mode_outlined)),
+                                child: Icon(
+                                    provider.mode == _LogMonitorMode.hide
+                                        ? Icons.vertical_align_bottom
+                                        : (provider.mode == _LogMonitorMode.dim
+                                            ? Icons.close
+                                            : Icons.dark_mode_outlined)),
                               ),
                             ),
                           ),
