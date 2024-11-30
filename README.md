@@ -9,7 +9,7 @@ The **Error Overlay** package for Flutter allows you to easily display real-time
 - Easy to set up and use.
 
 [//]: # (![screen_capture.gif]&#40;screenshots%2Fscreen_capture.gif&#41;)
-![screen_capture.gif](https://raw.githubusercontent.com/arnobmonir/error_overlay/blob/main/screenshots/screen_capture.gif)
+![screen_capture.gif](https://raw.githubusercontent.com/arnobmonir/error_overlay/screenshots/screen_capture.gif)
 
 ## Installation
 
@@ -17,7 +17,7 @@ To use the **Error Overlay** package in your Flutter project, follow these steps
 1.  Add the dependency to your *pubspec.yaml* file:
 ```yaml
 dependencies:
-  error_overlay: ^1.0.7
+  error_overlay: ^1.0.8
     
 ```
 2. Install the package by running:
