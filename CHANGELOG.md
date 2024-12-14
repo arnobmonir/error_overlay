@@ -1,3 +1,5 @@
+##  [1.0.8]
+Removed all deprecated functions from the interface
 ##  [1.0.7]
 Adding additional documentation with image support
 ##  [1.0.6]

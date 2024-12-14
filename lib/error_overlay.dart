@@ -95,10 +95,10 @@ class _ErrorOverlayState extends State<ErrorOverlay> {
                                 ),
                                 child: Icon(
                                     provider.mode == _LogMonitorMode.hide
-                                        ? Icons.vertical_align_bottom
+                                        ? Icons.remove_red_eye_outlined
                                         : (provider.mode == _LogMonitorMode.dim
                                             ? Icons.close
-                                            : Icons.dark_mode_outlined)),
+                                            : Icons.light_outlined)),
                               ),
                             ),
                           ),
@@ -127,7 +127,7 @@ class _ErrorOverlayState extends State<ErrorOverlay> {
                                         decoration: BoxDecoration(
                                           borderRadius:
                                               BorderRadius.circular(10),
-                                          color: Colors.black.withOpacity(0.7),
+                                          color: Colors.black38,
                                         ),
                                         child: SingleChildScrollView(
                                           child: Column(

@@ -8,8 +8,7 @@ The **Error Overlay** package for Flutter allows you to easily display real-time
 - Helps in debugging and monitoring app performance without switching to the console.
 - Easy to set up and use.
 
-[//]: # (![screen_capture.gif]&#40;screenshots%2Fscreen_capture.gif&#41;)
-![screen_capture.gif](https://github.com/arnobmonir/error_overlay/screenshots/screen_capture.gif)
+![screen_capture.gif](screenshots%2Fscreen_capture.gif)
 
 ## Installation
 
